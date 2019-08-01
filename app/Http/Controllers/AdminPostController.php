@@ -117,4 +117,9 @@ class AdminPostController extends Controller
 		Session :: flash('deleted', 'The Post has been Deleted');
 		return redirect('admin/posts');
     }
+	/***********CUSTOM FUNCTION FOR COMMENT-POST***********/
+	public function post($id){
+		$post = Post :: findOrFail($id); 
+		return view('post', compact('post'));
+	}
 }
