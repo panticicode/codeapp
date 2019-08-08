@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="{{ url('/') }}">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -52,6 +50,13 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                </ul>
+				<ul class="nav navbar-nav navbar-right">
+				@if(Auth :: user())
+					<li>
+                        <a href="{{ url('/admin') }}">Admin</a>
+                    </li>
+				@endif
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -137,6 +142,7 @@
     <!-- /.container -->
     <!-- jQuery -->
 <script src="{{asset('js/libs.js')}}"></script>
+@yield('scripts')
 </body>
 
 </html>

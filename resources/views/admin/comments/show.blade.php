@@ -7,11 +7,10 @@
 	<thead>
 		<tr>
 			<th>Id</th>
-			<th>Author</th>
-			<th>Email</th>
-			<th>Body</th>
-			<th>Post</th>
-			<th>Replies</th>
+			<td>Author</td>
+			<td>Email</td>
+			<td>Body</td>
+			<td>Post</td>
 		</tr>
 	</thead>	
 	<tbody>
@@ -22,7 +21,6 @@
 			<td>{{$comment->email}}</td>
 			<td>{{$comment->body}}</td>
 			<td><a href="{{route('home.post', $comment->post->id)}}">View Post</a></td>
-			<td><a href="{{route('admin.comment.replies.show', $comment->id)}}">View Replies</a></td>
 			<td>
 			@if($comment->is_active == true)
 			{!! Form::open(['method'=>'PATCH', 'action'=> ['PostCommentsController@update', $comment->id]]) !!}

@@ -18,6 +18,8 @@
 		<th>Category</th>
 		<th>title</th>
 		<th>body</th>
+		<th>Posts</th>
+		<th>Comments</th>
 		<th>Created</th>
 		<th>Updated</th>
 	</tr>
@@ -31,7 +33,9 @@
 		<td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->user->name}}</a></td>
 		<td>{{$post->category ? $post->category->name : 'Uncategerized'}}</td>
 		<td>{{$post->title}}</td>
-		<td>{{$post->body}}</td>
+		<td>{{substr($post->body,0,100)}}</td>
+		<td><a href="{{route('home.post', $post->id)}}">View Post</a></td>
+		<td><a href="{{route('admin.comments.show', $post->id)}}">View Comment</a></td>
 		<td>{{$post->created_at->diffForHumans()}}</td>{{----CARVIN METHODS----}}
 		<td>{{$post->updated_at->diffForHumans()}}</td>{{----CARVIN METHODS----}}
 	</tr>

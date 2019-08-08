@@ -119,7 +119,8 @@ class AdminPostController extends Controller
     }
 	/***********CUSTOM FUNCTION FOR COMMENT-POST***********/
 	public function post($id){
-		$post = Post :: findOrFail($id); 
-		return view('post', compact('post'));
+		$post = Post :: findOrFail($id);
+		$comments = $post->comments()->whereIsActive(1)->get();/**this is not been here**/	
+		return view('post', compact('post','comments'));
 	}
 }
