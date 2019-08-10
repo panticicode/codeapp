@@ -18,7 +18,7 @@ class AdminPostController extends Controller
      */
     public function index()
     {
-		$posts = Post :: all();
+		$posts = Post :: paginate(2);
         return view('admin.posts.index', compact('posts'));
     }
 
@@ -118,8 +118,8 @@ class AdminPostController extends Controller
 		return redirect('admin/posts');
     }
 	/***********CUSTOM FUNCTION FOR COMMENT-POST***********/
-	public function post($id){
-		$post = Post :: findOrFail($id);
+	public function post($slug){
+		$post = Post :: findBySlugOrFail($slug);
 		$comments = $post->comments()->whereIsActive(1)->get();/**this is not been here**/	
 		return view('post', compact('post','comments'));
 	}

@@ -51,6 +51,8 @@
 		<div class="media">
 			<a class="pull-left" href="#">
 				<img height="64" class="media-object" src="{{$comment->photo}}" alt="">
+				<!--IF YOU WANT A USE GRAVATAR YOU CAN-->
+				<!--<img height="64" class="media-object" src="{{Auth::user()->gravatar}}" alt="">-->
 			</a>
 			<div class="comment-replay-container">
 			<button class="toggle-replay btn btn-primary pull-right">Replay</button>
