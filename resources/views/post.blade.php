@@ -14,11 +14,11 @@
 	<p><span class="glyphicon glyphicon-time"></span> Posted {{$post->created_at->diffForHumans()}}
 	<hr>
 	<!-- Preview Image -->
-	<img class="img-responsive" src="{{$post->photo->file}}" alt="">
+	<img class="img-responsive" src="{{$post->photo ? $post->photo->file : $post->photoPlaceholder() . '700x200' }}" alt="">
 	<hr>
 	<!-- Post Content -->
 	
-	<p>{{$post->body}}</p>
+	<p>{!! $post->body !!}</p>
 	<hr>
 	@if(Session :: has('comment_message'))
 		{{session('comment_message')}}

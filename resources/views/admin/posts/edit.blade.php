@@ -1,11 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
+@include('includes.tinyeditor')
 <h1>Edit Post</h1>
 {!! Form::model($post, ['method'=>'PATCH', 'action'=>['AdminPostController@update', $post->id], 'files' => true]) !!}
 <div class="row">
 	<div class="col-md-3">
-		<img height="100" src="{{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}}" alt="">
+		<img height="100" src="{{$post->photo ? $post->photo->file : $post->photoPlaceholder() . '400x400'}}" alt="">
 	</div>
 	<div class="col-md-9">	
 		<div class="form-group">
