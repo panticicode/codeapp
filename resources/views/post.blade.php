@@ -40,7 +40,7 @@
 		{!! Form::close() !!}
 	</div>
 	<hr>
-	
+	@endif
 <!--DISQUS-->
 <!--
 <div id="disqus_thread"></div>

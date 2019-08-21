@@ -36,6 +36,7 @@ Route :: group(['middleware'=>'admin'], function(){
 		'create'=>'admin.categories.create',
 		'edit'=>'admin.categories.edit'
 	]]);
+	Route :: delete('admin/delete/media', 'AdminMediaController@deleteMedia');
 	Route :: resource('admin/media', 'AdminMediaController',['names'=>[
 		'index'=>'admin.media.index',
 		'create'=>'admin.media.create'
