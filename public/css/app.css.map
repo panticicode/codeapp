@@ -1,1 +1,0 @@
-{"version":3,"sources":["app.scss"],"names":[],"mappings":"AACA;EACC,eAAa,EACb;;AACD;EACC,iBAAgB,EAChB;;AACD;EACC,cAAa,EACb","file":"app.css","sourcesContent":["// @import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\n#admin-page{\n\tpadding-top:0;\n}\n#nested-comment{\n\tmargin-top: 60px;\n}\n.comment-replay{\n\tdisplay: none;\n}"]}

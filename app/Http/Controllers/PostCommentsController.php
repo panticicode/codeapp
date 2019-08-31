@@ -99,5 +99,5 @@ class PostCommentsController extends Controller
     {
         Comment :: findOrFail($id)->delete();
 		return redirect()->back();
-    }
+    } 
 }
