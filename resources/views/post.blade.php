@@ -14,7 +14,7 @@
 	<p><span class="glyphicon glyphicon-time"></span> Posted {{$post->created_at->diffForHumans()}}
 	<hr>
 	<!-- Preview Image -->
-	<img class="img-responsive" src="{{$post->photo ? $post->photo->file : $post->photoPlaceholder() . '700x200' }}" alt="">
+	<img class="img-responsive" src="{{$post->photo ? '/laravel/' . $post->photo->file : $post->photoPlaceholder() . '700x200' }}" alt="">
 	<hr>
 	<!-- Post Content -->
 	
@@ -49,7 +49,7 @@
 			<!-- Comment -->
 			<div class="media">
 				<a class="pull-left" href="#">
-					<img height="64" class="media-object" src="{{$comment->photo}}" alt="">
+					<img height="64" class="media-object" src="{{'/laravel/' . $comment->photo}}" alt="">
 				</a>
 				<div class="media-body">
 					<h4 class="media-heading">{{$comment->author}}
@@ -63,7 +63,7 @@
 							@if($reply->is_active == 1)
 							<div id="nested-comment" class="media">
 								<a class="pull-left" href="#">
-									<img height="64" class="media-object" src="{{$reply->photo}}" alt="">
+									<img height="64" class="media-object" src="{{'/laravel/' . $reply->photo}}" alt="">
 								</a>
 								<div class="media-body">
 								<h4 class="media-heading">{{$reply->author}}

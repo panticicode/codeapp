@@ -29,7 +29,7 @@
 	@foreach($posts as $post)
 	<tr>
 		<td>{{$post->id}}</td>
-		<td><img width="90" height="50" src="{{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}}" alt=""></td>
+		<td><img width="90" height="50" src="{{$post->photo ? '/laravel/' . $post->photo->file : 'http://placehold.it/400x400'}}" alt=""></td>
 		<td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->user->name}}</a></td>
 		<td>{{$post->category ? $post->category->name : 'Uncategerized'}}</td>
 		<td>{{$post->title}}</td>

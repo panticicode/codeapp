@@ -4,7 +4,7 @@
 <h1>Edit User</h1>
 <div class="row">
 	<div class="col-sm-3">
-		<img src="{{$user->photo ? $user->photo->file : 'http://placehold.it/400x400'}}" alt="" class="img-responsive img-rounded">
+		<img src="{{$user->photo ? '/laravel/' . $user->photo->file : 'http://placehold.it/400x400'}}" alt="" class="img-responsive img-rounded">
 	</div>
 	<div class="col-sm-9">
 	{!! Form::model($user, ['method'=>'PATCH', 'action'=>['AdminUsersController@update', $user->id], 'files' => true]) !!}

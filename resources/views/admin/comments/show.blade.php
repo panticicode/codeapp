@@ -20,7 +20,7 @@
 			<td>{{$comment->author}}</td>
 			<td>{{$comment->email}}</td>
 			<td>{{$comment->body}}</td>
-			<td><a href="{{route('home.post', $post->slug)}}">View Post</a></td>
+			<td><a href="{{route('home.post', $comment->post->slug)}}">View Post</a></td>
 			<td>
 			@if($comment->is_active == true)
 			{!! Form::open(['method'=>'PATCH', 'action'=> ['PostCommentsController@update', $comment->id]]) !!}

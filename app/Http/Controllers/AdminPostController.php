@@ -108,9 +108,12 @@ class AdminPostController extends Controller
     public function destroy($id)
     {
         $post = Post :: findOrFail($id);
+        //return public_path() . $post->photo->file;
 		if(!empty($post->photo->file)){
 			unlink(public_path() . $post->photo->file);	
-			$post->photo->delete();
+			if($post->photo->file !== null){
+			    $post->delete();   
+			}
 		}else{
 			$post->delete();
 		}

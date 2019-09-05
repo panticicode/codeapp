@@ -33,8 +33,8 @@
 			<tr>
 				<td><input class="checkBoxes" type="checkbox" name="checkBoxArray[]" value="{{$photo->id}}"></td>
 				<td>{{$photo->id}}</td>
-				<td><img height="50" src="{{$photo->file ? $photo->file : 'http://placehold.it/400x400'}}" alt=""></td>
-				<td>{{$photo->create_at ? $photo->create_at : 'No Date'}}</td>
+				<td><img height="50" src="{{$photo->file ? '/laravel/' . $photo->file : 'http://placehold.it/400x400'}}" alt=""></td>
+				<td>{{$photo->created_at ? $photo->created_at->diffForHumans() : 'No Date'}}</td>
 				<td><input type="hidden" name="photo" value="{{$photo->id}}"></td>	
 			</tr>
 		@endforeach	

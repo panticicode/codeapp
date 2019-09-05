@@ -152,6 +152,7 @@ return [
 		/*****************LARAVEL FILEMENAGER*********************/
 		UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
 		Intervention\Image\ImageServiceProvider::class,
+		Laravel\Tinker\TinkerServiceProvider::class,
         /*
          * Application Service Providers...
          */
